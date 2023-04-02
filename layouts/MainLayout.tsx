@@ -4,8 +4,7 @@ import { LayoutProps } from "./pageWithLayouts"
 const MainLayout: LayoutProps = ({ children }) => {
 	return (
 		<div>
-			<Header />
-			{children}
+			<Header>{children}</Header>
 		</div>
 	)
 }
