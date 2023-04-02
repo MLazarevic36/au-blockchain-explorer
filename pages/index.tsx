@@ -1,3 +1,7 @@
+import MainLayout from "@/layouts/MainLayout"
+
 export default function Home() {
-	return <h1 className="text-3xl font-bold underline">Hello world!</h1>
+	return <div>Test</div>
 }
+
+Home.layout = MainLayout
