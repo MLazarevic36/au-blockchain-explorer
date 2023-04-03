@@ -1,10 +1,10 @@
 import { useState } from "react"
 
-const Search = ({ router, placeholder }) => {
+const Search = ({ router, placeholder, hrefParam }) => {
 	const [searchValue, setSearchValue] = useState("")
 
 	const handleRedirect = () => {
-		router.push(`?address=${searchValue}`, undefined, { shallow: true })
+		router.push(`?${hrefParam}=${searchValue}`, undefined, { shallow: true })
 	}
 
 	return (

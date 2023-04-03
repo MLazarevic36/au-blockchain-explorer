@@ -76,7 +76,7 @@ export default function Account() {
 
 	return (
 		<div className="flex flex-col gap-4 justify-center items-center">
-			<Search router={router} placeholder={"Enter an address.."} />
+			<Search router={router} placeholder={"Enter an address.."} hrefParam={"address"} />
 			{router.query.address && (
 				<>
 					<div className="hero max-h-fit max-w-fit bg-primary-content">
@@ -110,6 +110,7 @@ export default function Account() {
 							</div>
 						</div>
 					)}
+					<a href={`/nft?address=${router.query.address}`}>Check nfts</a>
 				</>
 			)}
 		</div>
