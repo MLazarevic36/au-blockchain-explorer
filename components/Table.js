@@ -13,22 +13,22 @@ const Table = ({ headers, data }) => {
 					</tr>
 				</thead>
 				<tbody>
-					{/* row 1 */}
 					{data.map((row, i) => {
 						return (
-							<tr key={row.hash}>
-								<td>{row.hash.slice(0, 15)}...</td>
-								<td>
-									<a className="link link-info" href={`/account?address=${row.from}`}>
-										{row.from.slice(0, 15)}...
-									</a>
-								</td>
-								<td>
-									<a className="link link-info" href={`/account?address=${row.to}`}>
-										{row.to.slice(0, 15)}...
-									</a>
-								</td>
-								<td>{Utils.formatUnits(row.value._hex, "ether").slice(0, 7)} ETH</td>
+							<tr key={row.key}>
+								{row.fields.map((field, i) => {
+									if (field.type === "string") {
+										return <td>{field.value}</td>
+									} else if (field.type === "link") {
+										return (
+											<td>
+												<a className="link link-info" href={field.href}>
+													{field.value}
+												</a>
+											</td>
+										)
+									}
+								})}
 							</tr>
 						)
 					})}

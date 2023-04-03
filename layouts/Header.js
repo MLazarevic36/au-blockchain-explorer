@@ -41,6 +41,9 @@ const Header = ({ children }) => {
 								<a href="/block">Block</a>
 							</li>
 							<li>
+								<a href="/transaction">Transaction</a>
+							</li>
+							<li>
 								<a href="/account/">Account</a>
 							</li>
 							<li>

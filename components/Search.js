@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Search = ({ router }) => {
+const Search = ({ router, placeholder }) => {
 	const [searchValue, setSearchValue] = useState("")
 
 	const handleRedirect = () => {
@@ -14,7 +14,7 @@ const Search = ({ router }) => {
 					value={searchValue}
 					onChange={(e) => setSearchValue(e.target.value)}
 					type="text"
-					placeholder="Search…"
+					placeholder={placeholder || "Search…"}
 					className="input input-bordered"
 				/>
 				<button className="btn btn-square" onClick={() => handleRedirect()}>
